@@ -7,7 +7,7 @@ $user = eZUser::fetchByName( 'admin' );
 $user->loginCurrent();
 
 $content = '';
-$parameters = 
+
 $parameters = array( 'nodes' => array( 2 ),
                      'count' => 1,
                      'class' => 1 ); // 1 = folder
