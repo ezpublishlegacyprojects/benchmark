@@ -1,5 +1,9 @@
 <?php
 
+include_once( 'kernel/common/template.php' );
+   
+$http = eZHTTPTool::instance();
+$tpl = templateInit();
 $module = $Params['Module'];
 
 // login as admin
@@ -36,9 +40,9 @@ if ( !$success )
     return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
 }
 $parameters = eZLoremIpsum::createObjects( $parameters );
-
 $Result = array();
-$Result['content'] = $content;
+$tpl->setVariable( 'parameters', $parameters );
+$Result['content'] = $tpl->fetch( 'design:benchmark/create.tpl' );
 $Result['path'] = array( array( 'url' => false,
                                 'text' => 'Benchmark' )
                         );

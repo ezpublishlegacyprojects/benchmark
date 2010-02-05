@@ -1,0 +1,1 @@
+Created {$parameters.total_count} Objects in {$parameters.used_time} seconds under nodes {foreach $parameters.structure as $key => $value}<a href={concat('content/view/full/', $key)|ezurl}>{$key}</a> {/foreach}.
